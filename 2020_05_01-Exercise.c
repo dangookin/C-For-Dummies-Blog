@@ -16,7 +16,7 @@ void output_grid( char *g )
 }
 
 /* determine whether the game was won */
-int is_winner( char *g )
+char is_winner( char *g )
 {
 	return(' ');
 }
