@@ -27,7 +27,7 @@ int main()
 	printf("Processor end time: %f\n",(float)finish/CLOCKS_PER_SEC);
 
 	printf("Total program runtime: %f\n",
-			((float)finish-(float)start)/CLOCKS_PER_SEC
+			((float)finish-start)/CLOCKS_PER_SEC
 		  );
 
 	return(0);
