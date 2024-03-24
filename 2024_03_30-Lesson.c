@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <sys/ioctl.h>
+#include <unistd.h>
 
 int kbhit(void)
 {
 	int k;
 
-	ioctl(0,FIONREAD,&k);
+	ioctl(STDIN_FILENO,FIONREAD,&k);
 
 	return(k);
 }
