@@ -40,7 +40,7 @@ int main()
 	/* remove line buffering */
 	setvbuf(stdout,buffer,_IONBF,BUFSIZ);
 
-	/* positiong the asterisk */
+	/* position the asterisk */
 	clear();
 	locate(columns/2,rows/2);
 	putchar('*');
