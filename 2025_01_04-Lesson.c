@@ -22,7 +22,7 @@ char *concatenate(int v, ...)
 		}
 		else
 		{
-			r = realloc(r, sizeof(char) * strlen(temp) +1 );
+			r = realloc(r, sizeof(char) * (strlen(r) + strlen(temp)) +1 );
 			if( r==NULL )
 				return("NULL");
 			strcat(r,temp);
@@ -39,13 +39,13 @@ int main()
 	char *a,*b,*c;
 
 	a = concatenate(4,"alpha ","beta ","gamma ","delta");
-	printf("%s\n",r);
+	printf("%s\n",a);
 
 	b = concatenate(1,"Hello, world!");
-	printf("%s\n",r);
+	printf("%s\n",b);
 
 	c = concatenate(6,"f","o","o","b","a","r");
-	printf("%s\n",r);
+	printf("%s\n",c);
 
 	/* clean-up */
 	free(a);
