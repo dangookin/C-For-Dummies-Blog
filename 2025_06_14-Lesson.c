@@ -8,9 +8,6 @@ struct node {
 	struct node *right;
 };
 
-#define TRUE 1
-#define FALSE 0
-
 /* search for a value */
 struct node *search(struct node *r, int v)
 {
