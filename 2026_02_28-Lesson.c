@@ -4,7 +4,6 @@
 #include <termios.h>
 #include <unistd.h>
 
-// clear() messes with the scrollback buffer
 #define clear() printf("\e[H\e[2J")
 #define moveto(a,b) printf("\e[%d;%dH",b,a)
 #define mouse_enable() printf("\e[?1000h")
