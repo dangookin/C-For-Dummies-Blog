@@ -77,7 +77,7 @@ int main()
 
 	/* read stdin */
 	clear();
-	puts("Play with the mouse; press Enter  to end");
+	puts("Play with the mouse; press Enter to end");
 	while( (key=getchar()) != '\n' )
 	{
 		read(fileno(stdin),buffer,12);
