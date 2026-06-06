@@ -15,14 +15,21 @@ int main()
 	setlocale(LC_ALL,"");
 
 	/* generate and evaluate 20 random chars */
-	for( x=0; x<20; x++ )
+	for( x=0; x<200; x++ )
 	{
 		r = rand() % 0xFF;	/* char range */
 		wprintf(L"%03d %02X ",r,r);
 		if( isascii(r) )
 		{
 			if( iscntrl(r) )
-				wprintf(L"%lc - control code",r+9216);
+			{
+				/* call out DEL */
+				if( r==127 )
+					wprintf(L"%lc - control code",9249);
+				/* other Unicode ctrl chars */
+				else
+					wprintf(L"%lc - control code",r+9216);
+			}
 			else
 				wprintf(L"%lc - ASCII",r);
 		}

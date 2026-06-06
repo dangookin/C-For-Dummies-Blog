@@ -16,7 +16,7 @@ int isascii(int c)
 /* is the character a control code? */
 int iscntrl(int c)
 {
-	if( c>=0 && c<=31 )
+	if( (c>=0 && c<=31) || c==127 )
 		return true;
 	else
 		return false;
@@ -40,7 +40,14 @@ int main()
 		if( isascii(r) )
 		{
 			if( iscntrl(r) )
-				wprintf(L"%lc - control code",r+9216);
+			{
+				/* call out DEL */
+				if( r==127 )
+					wprintf(L"%lc - control code",9249);
+				/* other Unicode ctrl chars */
+				else
+					wprintf(L"%lc - control code",r+9216);
+			}
 			else
 				wprintf(L"%lc - ASCII",r);
 		}
