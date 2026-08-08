@@ -17,6 +17,7 @@ int main()
 		exit(1);
 	}
 
+	/* duplicate the file descriptor */
 	fd2 = dup(fd1);
 	if( fd2==-1 )
 	{
